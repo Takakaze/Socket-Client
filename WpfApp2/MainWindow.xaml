@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Client" Height="450" Width="800">
+    <Grid>
+        <Menu Margin="0,0,10,0.5" FontSize="35" FontFamily="Droid Sans Fallback" Background="Transparent">
+            <MenuItem Header="Operation" FontFamily="Droid Sans Fallback" Background="Transparent">
+                <MenuItem Header="Changing IP" Background="Transparent" Click="MenuItem_Click"/>
+                <MenuItem Header="Communicate" Background="Transparent" Click="Communicate"/>
+            </MenuItem>
+        </Menu>
+        <TextBox Name="text" Height="43" TextWrapping="Wrap" Width="199" Margin="10,62,586,317.5"/>
+        <TextBox Name="clientStatus" IsReadOnly="True" Height="200" TextWrapping="Wrap" Width="199" Margin="214,62,382,160.5" RenderTransformOrigin="0.616,0.255"/>
+        <Button Content="Send" Width="75" Margin="274,267,445,118.5" Click="MSGsend"/>
+    </Grid>
+</Window>
