@@ -13,7 +13,11 @@
                 <MenuItem Header="Communicate" Background="Transparent" Click="Communicate"/>
             </MenuItem>
         </Menu>
-        <TextBox Name="text" Height="43" TextWrapping="Wrap" Width="199" Margin="10,62,586,317.5"/>
+        <TextBox Name="text" TextWrapping="Wrap" Width="199" Margin="10,62,586,322.5"/>
+        <TextBlock TextWrapping="Wrap" Text="IP address" Margin="10,110,635,285.5"/>
+        <TextBlock TextWrapping="Wrap" Text="Port" Margin="160,110,586,280.5"/>
+        <TextBox Name="ipAddress" Height="23" Text="127.0.0.1" TextWrapping="Wrap" Width="150" Margin="10,142,635,257.5" RenderTransformOrigin="0.467,0.554"/>
+        <TextBox Name="Portnum" Height="23" Text="4096" TextWrapping="Wrap" Width="49" Margin="160,142,586,257.5"/>
         <TextBox Name="clientStatus" IsReadOnly="True" Height="200" TextWrapping="Wrap" Width="199" Margin="214,62,382,160.5" RenderTransformOrigin="0.616,0.255"/>
         <Button Content="Send" Width="75" Margin="274,267,445,118.5" Click="MSGsend"/>
     </Grid>

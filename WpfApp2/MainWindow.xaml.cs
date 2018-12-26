@@ -28,7 +28,6 @@ namespace WpfApp2
             InitializeComponent();
         }
 
-        string ip = "127.0.0.1";
         byte[] buffer = new byte[1024];
         Socket socket;
 
@@ -37,7 +36,7 @@ namespace WpfApp2
             try
             {
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                socket.Connect("127.0.0.1", 4096);
+                socket.Connect(ipAddress.Text, Convert.ToInt32(Portnum.Text));
                 this.Dispatcher.Invoke(new Action(() => clientStatus.Text += DateTime.Now.ToString("MM-dd HH:mm:ss")));
                 this.Dispatcher.Invoke(new Action(() => clientStatus.Text += "client:connected success!\n"));
                 socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(MSGreceive), socket);
@@ -58,7 +57,7 @@ namespace WpfApp2
                 var msg = Encoding.ASCII.GetString(buffer, 0, length);
                 
                 this.Dispatcher.Invoke(new Action(() => clientStatus.Text += DateTime.Now.ToString("MM-dd HH:mm:ss")));
-                this.Dispatcher.Invoke(new Action(() => clientStatus.Text += clientStatus.Text += "server:" + msg + "\n"));
+                this.Dispatcher.Invoke(new Action(() => clientStatus.Text += "server:" + msg + "\n"));
                 socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, new AsyncCallback(MSGreceive), socket);
             }
             catch(Exception ex)
